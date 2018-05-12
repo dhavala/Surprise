@@ -35,20 +35,20 @@ The result should be as follows (actual values may vary due to randomization):
     Test time   0.26    0.26    0.25    0.15    0.13    0.21    0.06
 
 
-The :meth:`load_builtin() <surprise.dataset.Dataset.load_builtin>` method will
+The :meth:`load_builtin() <idly.dataset.Dataset.load_builtin>` method will
 offer to download the `movielens-100k dataset
 <http://grouplens.org/datasets/movielens/>`_ if it has not already been
-downloaded, and it will save it in the ``.surprise_data`` folder in your home
+downloaded, and it will save it in the ``.idly_data`` folder in your home
 directory (you can also choose to save it :ref:`somewhere else <data_folder>`).
 
 We are here using the well-known
-:class:`SVD<surprise.prediction_algorithms.matrix_factorization.SVD>`
+:class:`SVD<idly.prediction_algorithms.matrix_factorization.SVD>`
 algorithm, but many other algorithms are available. See
 :ref:`prediction_algorithms` for more details.
 
-The :func:`cross_validate()<surprise.model_selection.validation.cross_validate>`
+The :func:`cross_validate()<idly.model_selection.validation.cross_validate>`
 function runs a cross-validation procedure according to the ``cv`` argument,
-and computes some :mod:`accuracy <surprise.accuracy>` measures. We are here
+and computes some :mod:`accuracy <idly.accuracy>` measures. We are here
 using a classical 5-fold cross-validation, but fancier iterators can be used
 (see :ref:`here <cross_validation_iterators_api>`).
 
@@ -58,12 +58,12 @@ Train-test split and the fit() method
 .. _train_test_split_example:
 
 If you don't want to run a full cross-validation procedure, you can use the
-:func:`train_test_split() <surprise.model_selection.split.train_test_split>`
+:func:`train_test_split() <idly.model_selection.split.train_test_split>`
 to sample a trainset and a testset with given sizes, and use the :mod:`accuracy
-metric<surprise.accuracy>` of your chosing. You'll need to use the :meth:`fit()
-<surprise.prediction_algorithms.algo_base.AlgoBase.fit>` method which will
+metric<idly.accuracy>` of your chosing. You'll need to use the :meth:`fit()
+<idly.prediction_algorithms.algo_base.AlgoBase.fit>` method which will
 train the algorithm on the trainset, and the :meth:`test()
-<surprise.prediction_algorithms.algo_base.AlgoBase.test>` method which will
+<idly.prediction_algorithms.algo_base.AlgoBase.test>` method which will
 return the predictions made from the testset:
 
 .. literalinclude:: ../../examples/train_test_split.py
@@ -96,8 +96,8 @@ Train on a whole trainset and the predict() method
 Obviously, we could also simply fit our algorithm to the whole dataset, rather
 than running cross-validation. This can be done by using the
 :meth:`build_full_trainset()
-<surprise.dataset.DatasetAutoFolds.build_full_trainset>` method which will
-build a :class:`trainset <surprise.Trainset>` object:
+<idly.dataset.DatasetAutoFolds.build_full_trainset>` method which will
+build a :class:`trainset <idly.Trainset>` object:
 
 .. literalinclude:: ../../examples/predict_ratings.py
     :caption: From file ``examples/predict_ratings.py``
@@ -105,7 +105,7 @@ build a :class:`trainset <surprise.Trainset>` object:
     :lines: 9-20
 
 We can now predict ratings by directly calling the :meth:`predict()
-<surprise.prediction_algorithms.algo_base.AlgoBase.predict>` method.  Let's say
+<idly.prediction_algorithms.algo_base.AlgoBase.predict>` method.  Let's say
 you're interested in user 196 and item 302 (make sure they're in the
 trainset!), and you know that the true rating :math:`r_{ui} = 4`:
 
@@ -123,7 +123,7 @@ The result should be:
 .. note::
 
     The :meth:`predict()
-    <surprise.prediction_algorithms.algo_base.AlgoBase.predict>` uses **raw**
+    <idly.prediction_algorithms.algo_base.AlgoBase.predict>` uses **raw**
     ids (please read :ref:`this <raw_inner_note>` about raw and inner ids). As
     the dataset we have used has been read from a file, the raw ids are strings
     (even if they represent numbers).
@@ -140,14 +140,14 @@ Use a custom dataset
 :ref:`datasets <dataset>`, but you can of course use a custom dataset.
 Loading a rating dataset can be done either from a file (e.g. a csv file), or
 from a pandas dataframe.  Either way, you will need to define a :class:`Reader
-<surprise.reader.Reader>` object for `Surprise
-<https://nicolashug.github.io/Surprise/>`_ to be able to parse the file or the
+<idly.reader.Reader>` object for `idly
+<https://idly.readthedocs.io>`_ to be able to parse the file or the
 dataframe.
 
 .. _load_from_file_example:
 
 - To load a dataset from a file (e.g. a csv file), you will need the
-  :meth:`load_from_file() <surprise.dataset.Dataset.load_from_file>` method:
+  :meth:`load_from_file() <idly.dataset.Dataset.load_from_file>` method:
 
   .. literalinclude:: ../../examples/load_custom_dataset.py
       :caption: From file ``examples/load_custom_dataset.py``
@@ -155,7 +155,7 @@ dataframe.
       :lines: 12-28
 
   For more details about readers and how to use them, see the :class:`Reader
-  class <surprise.reader.Reader>` documentation.
+  class <idly.reader.Reader>` documentation.
 
   .. note::
       As you already know from the previous section, the Movielens-100k dataset
@@ -165,8 +165,8 @@ dataframe.
 .. _load_from_df_example:
 
 - To load a dataset from a pandas dataframe, you will need the
-  :meth:`load_from_df() <surprise.dataset.Dataset.load_from_df>` method. You
-  will also need a :class:`Reader<surprise.reader.Reader>` object, but only
+  :meth:`load_from_df() <idly.dataset.Dataset.load_from_df>` method. You
+  will also need a :class:`Reader<idly.reader.Reader>` object, but only
   the ``rating_scale`` parameter must be specified. The dataframe must have
   three columns, corresponding to the user (raw) ids, the item (raw) ids, and
   the ratings in this order. Each row thus corresponds to a given rating. This
@@ -195,11 +195,11 @@ Use cross-validation iterators
 ------------------------------
 
 For cross-validation, we can use the :func:`cross_validate()
-<surprise.model_selection.validation.cross_validate>` function that does all
+<idly.model_selection.validation.cross_validate>` function that does all
 the hard work for us. But for a better control, we can also instanciate a
 cross-validation iterator, and make predictions over each split using the
 ``split()`` method of the iterator, and the
-:meth:`test()<surprise.prediction_algorithms.algo_base.AlgoBase.test>` method
+:meth:`test()<idly.prediction_algorithms.algo_base.AlgoBase.test>` method
 of the algorithm. Here is an example where we use a classical K-fold
 cross-validation procedure with 3 splits:
 
@@ -217,7 +217,7 @@ Result could be, e.g.:
 
 Other cross-validation iterator can be used, like LeaveOneOut or ShuffleSplit.
 See all the available iterators :ref:`here <cross_validation_iterators_api>`.
-The design of Surprise's cross-validation tools is heavily inspired from the
+The design of idly's cross-validation tools is heavily inspired from the
 excellent scikit-learn API.
 
 ---------------------
@@ -226,8 +226,8 @@ excellent scikit-learn API.
 
 A special case of cross-validation is when the folds are already predefined by
 some files. For instance, the movielens-100K dataset already provides 5 train
-and test files (u1.base, u1.test ... u5.base, u5.test). Surprise can handle
-this case by using a :class:`surprise.model_selection.split.PredefinedKFold`
+and test files (u1.base, u1.test ... u5.base, u5.test). idly can handle
+this case by using a :class:`idly.model_selection.split.PredefinedKFold`
 object:
 
 .. literalinclude:: ../../examples/load_custom_dataset_predefined_folds.py
@@ -245,10 +245,10 @@ Tune algorithm parameters with GridSearchCV
 -------------------------------------------
 
 The :func:`cross_validate()
-<surprise.model_selection.validation.cross_validate>` function reports accuracy
+<idly.model_selection.validation.cross_validate>` function reports accuracy
 metric over a cross-validation procedure for a given set of parameters.  If you
 want to know which parameter combination yields the best results, the
-:class:`GridSearchCV <surprise.model_selection.search.GridSearchCV>` class
+:class:`GridSearchCV <idly.model_selection.search.GridSearchCV>` class
 comes to the rescue.  Given a ``dict`` of parameters, this class exhaustively
 tries all the combinations of parameters and reports the best parameters for any
 accuracy measure (averaged over the different splits). It is heavily inspired
@@ -258,7 +258,7 @@ _selection.GridSearchCV.html>`_.
 
 Here is an example where we try different values for parameters ``n_epochs``,
 ``lr_all`` and ``reg_all`` of the :class:`SVD
-<surprise.prediction_algorithms.matrix_factorization.SVD>` algorithm.
+<idly.prediction_algorithms.matrix_factorization.SVD>` algorithm.
 
 .. literalinclude:: ../../examples/grid_search_usage.py
     :caption: From file ``examples/grid_search_usage.py``
@@ -300,7 +300,7 @@ please:
                       }
 
     Naturally, both can be combined, for example for the
-    :class:`KNNBaseline <surprise.prediction_algorithms.knns.KNNBaseline>`
+    :class:`KNNBaseline <idly.prediction_algorithms.knns.KNNBaseline>`
     algorithm:
 
     .. parsed-literal::
@@ -369,14 +369,14 @@ combination. It corresponds to the following table:
 Command line usage
 ------------------
 
-Surprise can also be used from the command line, for example:
+idly can also be used from the command line, for example:
 
 .. code::
 
-    surprise -algo SVD -params "{'n_epochs': 5, 'verbose': True}" -load-builtin ml-100k -n-folds 3
+    idly -algo SVD -params "{'n_epochs': 5, 'verbose': True}" -load-builtin ml-100k -n-folds 3
 
 See detailed usage by running:
 
 .. code::
 
-    surprise -h
+    idly -h

@@ -6,10 +6,10 @@ from __future__ import (absolute_import, division, print_function,
                         unicode_literals)
 import os
 
-from surprise import NormalPredictor
-from surprise import Dataset
-from surprise import Reader
-from surprise import model_selection as ms
+from idly import NormalPredictor
+from idly import Dataset
+from idly import Reader
+from idly import model_selection as ms
 
 
 def test_cross_validate():

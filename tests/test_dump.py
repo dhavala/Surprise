@@ -7,11 +7,11 @@ import tempfile
 import random
 import os
 
-from surprise import BaselineOnly
-from surprise import Dataset
-from surprise import Reader
-from surprise import dump
-from surprise.model_selection import PredefinedKFold
+from idly import BaselineOnly
+from idly import Dataset
+from idly import Reader
+from idly import dump
+from idly.model_selection import PredefinedKFold
 
 
 def test_dump():

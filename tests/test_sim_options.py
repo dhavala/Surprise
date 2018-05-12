@@ -9,13 +9,13 @@ from itertools import combinations
 
 import pytest
 
-from surprise import KNNBasic
-from surprise import KNNWithMeans
-from surprise import KNNBaseline
-from surprise import Dataset
-from surprise import Reader
-from surprise.model_selection import cross_validate
-from surprise.model_selection import PredefinedKFold
+from idly import KNNBasic
+from idly import KNNWithMeans
+from idly import KNNBaseline
+from idly import Dataset
+from idly import Reader
+from idly.model_selection import cross_validate
+from idly.model_selection import PredefinedKFold
 
 
 # the test and train files are from the ml-100k dataset (10% of u1.base and

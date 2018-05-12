@@ -18,19 +18,19 @@ approach.
   ratings from users (or items) that are negatively correlated. For a given
   prediction, the actual number of neighbors can be retrieved in the
   ``'actual_k'`` field of the ``details`` dictionary of the :class:`prediction
-  <surprise.prediction_algorithms.predictions.Prediction>`.
+  <idly.prediction_algorithms.predictions.Prediction>`.
 
 You may want to read the :ref:`User Guide <similarity_measures_configuration>`
 on how to configure the ``sim_options`` parameter.
 
-.. autoclass:: surprise.prediction_algorithms.knns.KNNBasic
+.. autoclass:: idly.prediction_algorithms.knns.KNNBasic
     :show-inheritance:
 
-.. autoclass:: surprise.prediction_algorithms.knns.KNNWithMeans
+.. autoclass:: idly.prediction_algorithms.knns.KNNWithMeans
     :show-inheritance:
 
-.. autoclass:: surprise.prediction_algorithms.knns.KNNWithZScore
+.. autoclass:: idly.prediction_algorithms.knns.KNNWithZScore
     :show-inheritance:
 
-.. autoclass:: surprise.prediction_algorithms.knns.KNNBaseline
+.. autoclass:: idly.prediction_algorithms.knns.KNNBaseline
     :show-inheritance:

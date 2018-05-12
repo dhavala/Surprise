@@ -6,7 +6,7 @@ from math import sqrt
 
 import pytest
 
-from surprise.accuracy import mae, rmse, fcp
+from idly.accuracy import mae, rmse, fcp
 
 
 def pred(true_r, est, u0=None):

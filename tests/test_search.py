@@ -10,13 +10,13 @@ import numpy as np
 import pytest
 from scipy.stats import randint, uniform
 
-from surprise import Dataset
-from surprise import Reader
-from surprise import SVD
-from surprise.model_selection import KFold
-from surprise.model_selection import PredefinedKFold
-from surprise.model_selection import GridSearchCV, RandomizedSearchCV
-from surprise.model_selection import cross_validate
+from idly import Dataset
+from idly import Reader
+from idly import SVD
+from idly.model_selection import KFold
+from idly.model_selection import PredefinedKFold
+from idly.model_selection import GridSearchCV, RandomizedSearchCV
+from idly.model_selection import cross_validate
 
 
 # Tests for GridSearchCV class

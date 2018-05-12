@@ -8,21 +8,21 @@ import os
 
 import pytest
 
-from surprise import NormalPredictor
-from surprise import BaselineOnly
-from surprise import KNNBasic
-from surprise import KNNWithMeans
-from surprise import KNNBaseline
-from surprise import SVD
-from surprise import SVDpp
-from surprise import NMF
-from surprise import SlopeOne
-from surprise import CoClustering
-from surprise import Dataset
-from surprise import Reader
-from surprise import KNNWithZScore
-from surprise.model_selection import PredefinedKFold
-from surprise.model_selection import train_test_split
+from idly import NormalPredictor
+from idly import BaselineOnly
+from idly import KNNBasic
+from idly import KNNWithMeans
+from idly import KNNBaseline
+from idly import SVD
+from idly import SVDpp
+from idly import NMF
+from idly import SlopeOne
+from idly import CoClustering
+from idly import Dataset
+from idly import Reader
+from idly import KNNWithZScore
+from idly.model_selection import PredefinedKFold
+from idly.model_selection import train_test_split
 
 
 def test_unknown_user_or_item():

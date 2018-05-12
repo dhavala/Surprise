@@ -52,7 +52,7 @@ except ImportError:
 else:
     USE_CYTHON = True
 
-__version__ = '1.0.6'
+__version__ = '0.0.201'
 
 here = path.abspath(path.dirname(__file__))
 
@@ -74,22 +74,22 @@ ext = '.pyx' if USE_CYTHON else '.c'
 
 extensions = [
     Extension(
-        'surprise.similarities',
-        ['surprise/similarities' + ext],
+        'idly.similarities',
+        ['idly/similarities' + ext],
         include_dirs=[np.get_include()]
     ),
     Extension(
-        'surprise.prediction_algorithms.matrix_factorization',
-        ['surprise/prediction_algorithms/matrix_factorization' + ext],
+        'idly.prediction_algorithms.matrix_factorization',
+        ['idly/prediction_algorithms/matrix_factorization' + ext],
         include_dirs=[np.get_include()]),
-    Extension('surprise.prediction_algorithms.optimize_baselines',
-              ['surprise/prediction_algorithms/optimize_baselines' + ext],
+    Extension('idly.prediction_algorithms.optimize_baselines',
+              ['idly/prediction_algorithms/optimize_baselines' + ext],
               include_dirs=[np.get_include()]),
-    Extension('surprise.prediction_algorithms.slope_one',
-              ['surprise/prediction_algorithms/slope_one' + ext],
+    Extension('idly.prediction_algorithms.slope_one',
+              ['idly/prediction_algorithms/slope_one' + ext],
               include_dirs=[np.get_include()]),
-    Extension('surprise.prediction_algorithms.co_clustering',
-              ['surprise/prediction_algorithms/co_clustering' + ext],
+    Extension('idly.prediction_algorithms.co_clustering',
+              ['idly/prediction_algorithms/co_clustering' + ext],
               include_dirs=[np.get_include()]),
 ]
 
@@ -100,20 +100,20 @@ else:
     ext_modules = extensions
 
 setup(
-    name='scikit-surprise',
-    author='Nicolas Hug',
-    author_email='contact@nicolas-hug.com',
+    name='idly',
+    author='Soma Dhavala',
+    author_email='soma.dhavala@gmail.com',
 
-    description=('An easy-to-use library for recommender systems.'),
+    description=('interpretable deep learning. yay!'),
     long_description=long_description,
     long_description_content_type='text/markdown',
 
     version=__version__,
-    url='http://surpriselib.com',
+    url='https://readthedocs.org/projects/idly/',
 
     license='GPLv3+',
     classifiers=[
-        'Development Status :: 5 - Production/Stable',
+        'Development Status :: 1 - Planning',
         'Intended Audience :: Developers',
         'Intended Audience :: Education',
         'Intended Audience :: Science/Research',
@@ -132,5 +132,5 @@ setup(
     dependency_links=dependency_links,
 
     entry_points={'console_scripts':
-                  ['surprise = surprise.__main__:main']},
+                  ['idly = idly.__main__:main']},
 )

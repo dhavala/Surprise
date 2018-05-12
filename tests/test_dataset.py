@@ -10,10 +10,10 @@ import random
 import pytest
 import pandas as pd
 
-from surprise import BaselineOnly
-from surprise import Dataset
-from surprise import Reader
-from surprise.builtin_datasets import get_dataset_dir
+from idly import BaselineOnly
+from idly import Dataset
+from idly import Reader
+from idly.builtin_datasets import get_dataset_dir
 
 
 random.seed(1)
@@ -251,9 +251,9 @@ def test_build_anti_testset():
 def test_get_dataset_dir():
     '''Test the get_dataset_dir() function.'''
 
-    os.environ['SURPRISE_DATA_FOLDER'] = '/tmp/surprise_data'
-    assert get_dataset_dir() == '/tmp/surprise_data'
+    os.environ['IDLY_DATA_FOLDER'] = '/tmp/idly_data'
+    assert get_dataset_dir() == '/tmp/idly_data'
 
     # Fall back to default
-    del os.environ['SURPRISE_DATA_FOLDER']
-    assert get_dataset_dir() == os.path.expanduser('~' + '/.surprise_data/')
+    del os.environ['IDLY_DATA_FOLDER']
+    assert get_dataset_dir() == os.path.expanduser('~' + '/.idly_data/')

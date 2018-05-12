@@ -3,10 +3,10 @@ import os
 
 import pytest
 
-from surprise import Dataset
-from surprise import Reader
-from surprise import AlgoBase
-from surprise.model_selection import KFold
+from idly import Dataset
+from idly import Reader
+from idly import AlgoBase
+from idly.model_selection import KFold
 
 
 data_file = os.path.join(os.path.dirname(__file__), './u1_ml100k_train')

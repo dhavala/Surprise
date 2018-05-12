@@ -1,0 +1,3 @@
+[console_scripts]
+idly = idly.__main__:main
+

@@ -46,7 +46,7 @@ How to get the k nearest neighbors of a user (or item)
 --------------------------------------------------------------
 
 You can use the :meth:`get_neighbors()
-<surprise.prediction_algorithms.algo_base.AlgoBase.get_neighbors>` methods of
+<idly.prediction_algorithms.algo_base.AlgoBase.get_neighbors>` methods of
 the algorithm object. This is only relevant for algorithms that use a
 similarity measure, such as the :ref:`k-NN algorithms
 <pred_package_knn_inpired>`.
@@ -71,7 +71,7 @@ Story from the MovieLens-100k dataset. The output is:
 There's a lot of boilerplate because of the conversions between movie names and
 their raw/inner ids (see :ref:`this note <raw_inner_note>`), but it all boils
 down to the use of :meth:`get_neighbors()
-<surprise.prediction_algorithms.algo_base.AlgoBase.get_neighbors>`:
+<idly.prediction_algorithms.algo_base.AlgoBase.get_neighbors>`:
 
 .. literalinclude:: ../../examples/k_nearest_neighbors.py
     :caption: From file ``examples/k_nearest_neighbors.py``
@@ -86,7 +86,7 @@ How to serialize an algorithm
 -----------------------------
 
 Prediction algorithms can be serialized and loaded back using the :func:`dump()
-<surprise.dump.dump>` and :func:`load() <surprise.dump.load>` functions. Here
+<idly.dump.dump>` and :func:`load() <idly.dump.load>` functions. Here
 is a small example where the SVD algorithm is trained on a dataset and
 serialized. It is then reloaded and can be used again for making predictions:
 
@@ -118,28 +118,28 @@ What are raw and inner ids
 
 Users and items have a raw id and an inner id. Some methods will use/return a
 raw id (e.g. the :meth:`predict()
-<surprise.prediction_algorithms.algo_base.AlgoBase.predict>` method), while
+<idly.prediction_algorithms.algo_base.AlgoBase.predict>` method), while
 some other will use/return an inner id.
 
 Raw ids are ids as defined in a rating file or in a pandas dataframe. They can
 be strings or numbers. Note though that if the ratings were read from a file
 which is the standard scenario, they are represented as strings. **This is
 important to know if you're using e.g.** :meth:`predict()
-<surprise.prediction_algorithms.algo_base.AlgoBase.predict>` **or other methods
+<idly.prediction_algorithms.algo_base.AlgoBase.predict>` **or other methods
 that accept raw ids as parameters.**
 
 On trainset creation, each raw id is mapped to a unique integer called inner
-id, which is a lot more suitable for `Surprise
+id, which is a lot more suitable for `idly
 <https://nicolashug.github.io/Surprise/>`_ to manipulate. Conversions between
 raw and inner ids can be done using the :meth:`to_inner_uid()
-<surprise.Trainset.to_inner_uid>`, :meth:`to_inner_iid()
-<surprise.Trainset.to_inner_iid>`, :meth:`to_raw_uid()
-<surprise.Trainset.to_raw_uid>`, and :meth:`to_raw_iid()
-<surprise.Trainset.to_raw_iid>` methods of the :class:`trainset
-<surprise.Trainset>`.
+<idly.Trainset.to_inner_uid>`, :meth:`to_inner_iid()
+<idly.Trainset.to_inner_iid>`, :meth:`to_raw_uid()
+<idly.Trainset.to_raw_uid>`, and :meth:`to_raw_iid()
+<idly.Trainset.to_raw_iid>` methods of the :class:`trainset
+<idly.Trainset>`.
 
 
-Can I use my own dataset with Surprise, and can it be a pandas dataframe
+Can I use my own dataset with idly, and can it be a pandas dataframe
 ------------------------------------------------------------------------
 
 Yes, and yes. See the :ref:`user guide <load_custom>`.
@@ -148,7 +148,7 @@ How to tune an algorithm parameters
 -----------------------------------
 
 You can tune the parameters of an algorithm with the :class:`GridSearchCV
-<surprise.model_selection.search.GridSearchCV>` class as described :ref:`here
+<idly.model_selection.search.GridSearchCV>` class as described :ref:`here
 <tuning_algorithm_parameters>`. After the tuning, you may want to have an
 :ref:`unbiased estimate of your algorithm performances
 <unbiased_estimate_after_tuning>`.
@@ -157,10 +157,10 @@ How to get accuracy measures on the training set
 ------------------------------------------------
 
 You can use the :meth:`build_testset()
-<surprise.Trainset.build_testset()>` method of the :class:`Trainset
-<surprise.Trainset>` object to build a testset that can be then used
+<idly.Trainset.build_testset()>` method of the :class:`Trainset
+<idly.Trainset>` object to build a testset that can be then used
 with the :meth:`test()
-<surprise.prediction_algorithms.algo_base.AlgoBase.test>` method:
+<idly.prediction_algorithms.algo_base.AlgoBase.test>` method:
 
 .. literalinclude:: ../../examples/evaluate_on_trainset.py
     :caption: From file ``examples/evaluate_on_trainset.py``
@@ -207,7 +207,7 @@ seed of the RNG at the beginning of your program:
 Where are datasets stored and how to change it?
 -----------------------------------------------
 
-By default, datasets downloaded by Surprise will be saved in the
-``'~/.surprise_data'`` directory. This is also where dump files will be stored.
-You can change the default directory by setting the ``'SURPRISE_DATA_FOLDER'``
+By default, datasets downloaded by idly will be saved in the
+``'~/.idly_data'`` directory. This is also where dump files will be stored.
+You can change the default directory by setting the ``'IDLY_DATA_FOLDER'``
 environment variable.

@@ -32,4 +32,4 @@ __all__ = ['AlgoBase', 'NormalPredictor', 'BaselineOnly', 'KNNBasic',
            'Reader', 'Trainset', 'evaluate', 'print_perf', 'GridSearch',
            'dump', 'KNNWithZScore', 'get_dataset_dir', 'model_selection']
 
-__version__ = get_distribution('scikit-surprise').version
+__version__ = get_distribution('idly').version

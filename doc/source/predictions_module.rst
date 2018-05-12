@@ -3,7 +3,7 @@
 The predictions module
 ------------------------
 
-.. automodule:: surprise.prediction_algorithms.predictions
+.. automodule:: idly.prediction_algorithms.predictions
     :members:
     :exclude-members: all_ratings, all_xs, all_ys
 

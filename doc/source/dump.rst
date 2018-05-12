@@ -3,5 +3,5 @@
 dump module
 ===============
 
-.. automodule:: surprise.dump
+.. automodule:: idly.dump
     :members:

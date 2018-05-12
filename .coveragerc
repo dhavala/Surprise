@@ -1,2 +1,2 @@
 [report]
-omit = surprise/__main__.py
+omit = idly/__main__.py

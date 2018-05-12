@@ -3,7 +3,7 @@
 How to build your own prediction algorithm
 ==========================================
 
-This page describes how to build a custom prediction algorithm using Surprise.
+This page describes how to build a custom prediction algorithm using idly.
 
 The basics
 ~~~~~~~~~~
@@ -12,9 +12,9 @@ Want to get your hands dirty? Cool.
 
 Creating your own prediction algorithm is pretty simple: an algorithm is
 nothing but a class derived from :class:`AlgoBase
-<surprise.prediction_algorithms.algo_base.AlgoBase>` that has an ``estimate``
+<idly.prediction_algorithms.algo_base.AlgoBase>` that has an ``estimate``
 method.  This is the method that is called by the :meth:`predict()
-<surprise.prediction_algorithms.algo_base.AlgoBase.predict>` method. It takes
+<idly.prediction_algorithms.algo_base.AlgoBase.predict>` method. It takes
 in an **inner** user id, an **inner** item id (see :ref:`this note
 <raw_inner_note>`), and returns the estimated rating :math:`\hat{r}_{ui}`:
 
@@ -36,7 +36,7 @@ return a dictionary with given details: ::
         return 3, details
 
 This dictionary will be stored in the :class:`prediction
-<surprise.prediction_algorithms.predictions.Prediction>` as the ``details``
+<idly.prediction_algorithms.predictions.Prediction>` as the ``details``
 field and can be used for :ref:`later analysis <further_analysis>`.
 
 
@@ -56,11 +56,11 @@ be done by defining the ``fit`` method:
 
 
 The ``fit`` method is called e.g. by the :func:`cross_validate
-<surprise.model_selection.validation.cross_validate>` function at each fold of
+<idly.model_selection.validation.cross_validate>` function at each fold of
 a cross-validation process, (but you can also :ref:`call it yourself
 <use_cross_validation_iterators>`).  Before doing anything, you should call the
 base class :meth:`fit()
-<surprise.prediction_algorithms.algo_base.AlgoBase.fit>` method.
+<idly.prediction_algorithms.algo_base.AlgoBase.fit>` method.
 
 Note that the ``fit()`` method returns ``self``. This allows to use expression
 like ``algo.fit(trainset).test(testset)``.
@@ -69,10 +69,10 @@ The ``trainset`` attribute
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Once the base class :meth:`fit()
-<surprise.prediction_algorithms.algo_base.AlgoBase.fit>` method has returned,
+<idly.prediction_algorithms.algo_base.AlgoBase.fit>` method has returned,
 all the info you need about the current training set (rating values, etc...) is
 stored in the ``self.trainset`` attribute. This is a :class:`Trainset
-<surprise.Trainset>` object that has many attributes and methods of
+<idly.Trainset>` object that has many attributes and methods of
 interest for prediction.
 
 To illustrate its usage, let's make an algorithm that predicts an average
@@ -94,17 +94,17 @@ When the prediction is impossible
 It's up to your algorithm to decide if it can or cannot yield a prediction. If
 the prediction is impossible, then you can raise the
 :class:`PredictionImpossible
-<surprise.prediction_algorithms.predictions.PredictionImpossible>` exception.
+<idly.prediction_algorithms.predictions.PredictionImpossible>` exception.
 You'll need to import it first: ::
 
-    from surprise import PredictionImpossible
+    from idly import PredictionImpossible
 
 
 This exception will be caught by the :meth:`predict()
-<surprise.prediction_algorithms.algo_base.AlgoBase.predict>` method, and the
+<idly.prediction_algorithms.algo_base.AlgoBase.predict>` method, and the
 estimation :math:`\hat{r}_{ui}` will be set according to
 the :meth:`default_prediction()
-<surprise.prediction_algorithms.algo_base.AlgoBase.default_prediction>` method,
+<idly.prediction_algorithms.algo_base.AlgoBase.default_prediction>` method,
 which can be overridden. By default, it returns the average of all ratings in
 the trainset.
 
@@ -117,9 +117,9 @@ need to accept ``bsl_options`` and ``sim_options`` as parameters to the
 these parameters in the :ref:`prediction_algorithms` section.
 
 Methods :meth:`compute_baselines()
-<surprise.prediction_algorithms.algo_base.AlgoBase.compute_baselines>`   and
+<idly.prediction_algorithms.algo_base.AlgoBase.compute_baselines>`   and
 :meth:`compute_similarities()
-<surprise.prediction_algorithms.algo_base.AlgoBase.compute_similarities>` can
+<idly.prediction_algorithms.algo_base.AlgoBase.compute_similarities>` can
 be called in the ``fit`` method (or anywhere else).
 
 .. literalinclude:: ../../examples/building_custom_algorithms/with_baselines_or_sim.py
@@ -129,5 +129,5 @@ be called in the ``fit`` method (or anywhere else).
 
 
 Feel free to explore the prediction_algorithms package `source
-<https://github.com/NicolasHug/Surprise/tree/master/surprise/prediction_algorithms>`_
+<https://github.com/dhavala/idly/tree/master/idly/prediction_algorithms>`_
 to get an idea of what can be done.

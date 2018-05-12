@@ -8,15 +8,15 @@ from collections import Counter
 import pytest
 from six import itervalues
 
-from surprise import Dataset
-from surprise import Reader
-from surprise.model_selection import KFold
-from surprise.model_selection import ShuffleSplit
-from surprise.model_selection import RepeatedKFold
-from surprise.model_selection import train_test_split
-from surprise.model_selection import LeaveOneOut
-from surprise.model_selection import PredefinedKFold
-from surprise.model_selection.split import get_cv
+from idly import Dataset
+from idly import Reader
+from idly.model_selection import KFold
+from idly.model_selection import ShuffleSplit
+from idly.model_selection import RepeatedKFold
+from idly.model_selection import train_test_split
+from idly.model_selection import LeaveOneOut
+from idly.model_selection import PredefinedKFold
+from idly.model_selection.split import get_cv
 
 
 np.random.seed(1)

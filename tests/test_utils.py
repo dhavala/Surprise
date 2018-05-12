@@ -4,7 +4,7 @@ from __future__ import (absolute_import, division, print_function,
 import numpy as np
 import pytest
 
-from surprise.utils import get_rng
+from idly.utils import get_rng
 
 
 def test_get_rng():

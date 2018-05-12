@@ -3,20 +3,20 @@
 Using prediction algorithms
 ===========================
 
-Surprise provides a bunch of built-in algorithms. All algorithms derive from
-the :class:`AlgoBase <surprise.prediction_algorithms.algo_base.AlgoBase>` base
+idly provides a bunch of built-in algorithms. All algorithms derive from
+the :class:`AlgoBase <idly.prediction_algorithms.algo_base.AlgoBase>` base
 class, where are implemented some key methods (e.g. :meth:`predict
-<surprise.prediction_algorithms.algo_base.AlgoBase.predict>`, :meth:`fit
-<surprise.prediction_algorithms.algo_base.AlgoBase.fit>` and :meth:`test
-<surprise.prediction_algorithms.algo_base.AlgoBase.test>`). The list and
+<idly.prediction_algorithms.algo_base.AlgoBase.predict>`, :meth:`fit
+<idly.prediction_algorithms.algo_base.AlgoBase.fit>` and :meth:`test
+<idly.prediction_algorithms.algo_base.AlgoBase.test>`). The list and
 details of the available prediction algorithms can be found in the
-:mod:`prediction_algorithms <surprise.prediction_algorithms>` package
+:mod:`prediction_algorithms <idly.prediction_algorithms>` package
 documentation.
 
-Every algorithm is part of the global Surprise namespace, so you only need to
-import their names from the Surprise package, for example: ::
+Every algorithm is part of the global idly namespace, so you only need to
+import their names from the idly package, for example: ::
 
-    from surprise import KNNBasic
+    from idly import KNNBasic
     algo = KNNBasic()
 
 
@@ -41,7 +41,7 @@ Baselines estimates configuration
     \lambda \left(b_u^2 + b_i^2 \right).
 
   For algorithms using baselines in another objective function (e.g. the
-  :class:`SVD <surprise.prediction_algorithms.matrix_factorization.SVD>`
+  :class:`SVD <idly.prediction_algorithms.matrix_factorization.SVD>`
   algorithm), the baseline configuration is done differently and is specific to
   each algorithm. Please refer to their own documentation.
 
@@ -97,7 +97,7 @@ Usage examples:
     :lines: 30-34
 
 Note that some similarity measures may use baselines, such as the
-:func:`pearson_baseline <surprise.similarities.pearson_baseline>` similarity.
+:func:`pearson_baseline <idly.similarities.pearson_baseline>` similarity.
 Configuration works just the same, whether the baselines are used in the actual
 prediction :math:`\hat{r}_{ui}` or not:
 
@@ -121,7 +121,7 @@ need to pass a ``sim_options`` argument at the creation of an algorithm. This
 argument is a dictionary with the following (all optional) keys:
 
 - ``'name'``: The name of the similarity to use, as defined in the
-  :mod:`similarities <surprise.similarities>` module. Default is ``'MSD'``.
+  :mod:`similarities <idly.similarities>` module. Default is ``'MSD'``.
 - ``'user_based'``: Whether similarities will be computed between users or
   between items. This has a **huge** impact on the performance of a prediction
   algorithm.  Default is ``True``.
@@ -131,7 +131,7 @@ argument is a dictionary with the following (all optional) keys:
   :math:`|I_{uv}| < \text{min_support}` then :math:`\text{sim}(u, v) = 0`. The
   same goes for items.
 - ``'shrinkage'``: Shrinkage parameter to apply (only relevant for
-  :func:`pearson_baseline <surprise.similarities.pearson_baseline>` similarity).
+  :func:`pearson_baseline <idly.similarities.pearson_baseline>` similarity).
   Default is 100.
 
 Usage examples:
@@ -147,4 +147,4 @@ Usage examples:
     :lines: 26-29
 
 .. seealso::
-    The :mod:`similarities <surprise.similarities>` module.
+    The :mod:`similarities <idly.similarities>` module.

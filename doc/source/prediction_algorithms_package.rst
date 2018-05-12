@@ -3,7 +3,7 @@
 prediction_algorithms package
 =============================
 
-.. automodule:: surprise.prediction_algorithms
+.. automodule:: idly.prediction_algorithms
 
 You may want to check the :ref:`notation standards <notation_standards>`
 before diving into the formulas.

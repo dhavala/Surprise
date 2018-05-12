@@ -3,6 +3,6 @@
 dataset module
 ===================
 
-.. automodule:: surprise.dataset
+.. automodule:: idly.dataset
     :members:
     :exclude-members: BuiltinDataset, read_ratings, DatasetUserFolds,

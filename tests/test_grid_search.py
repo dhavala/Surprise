@@ -9,12 +9,12 @@ import random
 
 import pytest
 
-from surprise import Dataset
-from surprise import Reader
-from surprise import SVD
-from surprise import KNNBaseline
-from surprise import evaluate
-from surprise import GridSearch
+from idly import Dataset
+from idly import Reader
+from idly import SVD
+from idly import KNNBaseline
+from idly import evaluate
+from idly import GridSearch
 
 # the test and train files are from the ml-100k dataset (10% of u1.base and
 # 10 % of u1.test)

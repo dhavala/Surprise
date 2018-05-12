@@ -3,7 +3,7 @@
 Reader class
 ============
 
-.. autoclass:: surprise.reader.Reader
+.. autoclass:: idly.reader.Reader
     :members:
     :exclude-members: parse_line
 

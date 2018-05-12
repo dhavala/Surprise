@@ -3,7 +3,7 @@
 similarities module
 ===================
 
-.. automodule:: surprise.similarities
+.. automodule:: idly.similarities
     :members:
     :exclude-members: compute_mean_diff
     :show-inheritance:

@@ -3,11 +3,11 @@
 Matrix Factorization-based algorithms
 -------------------------------------
 
-.. autoclass:: surprise.prediction_algorithms.matrix_factorization.SVD
+.. autoclass:: idly.prediction_algorithms.matrix_factorization.SVD
     :show-inheritance:
 
-.. autoclass:: surprise.prediction_algorithms.matrix_factorization.SVDpp
+.. autoclass:: idly.prediction_algorithms.matrix_factorization.SVDpp
     :show-inheritance:
 
-.. autoclass:: surprise.prediction_algorithms.matrix_factorization.NMF
+.. autoclass:: idly.prediction_algorithms.matrix_factorization.NMF
     :show-inheritance:

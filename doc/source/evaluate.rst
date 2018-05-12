@@ -3,7 +3,7 @@
 evaluate module
 ===============
 
-.. automodule:: surprise.evaluate
+.. automodule:: idly.evaluate
     :members:
     :exclude-members: CaseInsensitiveDefaultDict,
         CaseInsensitiveDefaultDictForBestResults, seed_and_eval

@@ -10,10 +10,10 @@ import shutil
 
 import pytest
 
-from surprise import NormalPredictor
-from surprise import Dataset
-from surprise import Reader
-from surprise import evaluate
+from idly import NormalPredictor
+from idly import Dataset
+from idly import Reader
+from idly import evaluate
 
 
 def test_performances():

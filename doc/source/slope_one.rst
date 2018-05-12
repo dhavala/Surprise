@@ -3,5 +3,5 @@
 Slope One
 ---------
 
-.. autoclass:: surprise.prediction_algorithms.slope_one.SlopeOne
+.. autoclass:: idly.prediction_algorithms.slope_one.SlopeOne
     :show-inheritance:

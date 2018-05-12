@@ -3,5 +3,5 @@
 The algorithm base class
 ------------------------
 
-.. automodule:: surprise.prediction_algorithms.algo_base
+.. automodule:: idly.prediction_algorithms.algo_base
     :members:

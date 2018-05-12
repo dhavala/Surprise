@@ -3,5 +3,5 @@
 Trainset class
 ==============
 
-.. autoclass:: surprise.Trainset
+.. autoclass:: idly.Trainset
     :members:

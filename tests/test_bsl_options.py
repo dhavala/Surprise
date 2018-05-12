@@ -6,11 +6,11 @@ import os
 
 import pytest
 
-from surprise import BaselineOnly
-from surprise import Dataset
-from surprise import Reader
-from surprise.model_selection import cross_validate
-from surprise.model_selection import PredefinedKFold
+from idly import BaselineOnly
+from idly import Dataset
+from idly import Reader
+from idly.model_selection import cross_validate
+from idly.model_selection import PredefinedKFold
 
 
 # the test and train files are from the ml-100k dataset (10% of u1.base and

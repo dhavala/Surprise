@@ -3,4 +3,4 @@ include LICENSE.md
 include requirements.txt
 recursive-include doc *
 recursive-include examples *
-recursive-include surprise *.c *.pyx
+recursive-include idly *.c *.pyx

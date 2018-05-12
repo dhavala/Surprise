@@ -6,9 +6,9 @@ Basic algorithms
 These are basic algorithms that do not do much work but that are still useful
 for comparing accuracies.
 
-.. autoclass:: surprise.prediction_algorithms.random_pred.NormalPredictor
+.. autoclass:: idly.prediction_algorithms.random_pred.NormalPredictor
     :show-inheritance:
 
-.. autoclass:: surprise.prediction_algorithms.baseline_only.BaselineOnly
+.. autoclass:: idly.prediction_algorithms.baseline_only.BaselineOnly
     :show-inheritance:
 

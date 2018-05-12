@@ -1,4 +1,4 @@
-Contributing to Surprise
+Contributing to Idly
 ========================
 
 Pull requests are always welcome! Before submitting a new pull request, please
@@ -15,7 +15,7 @@ make sure that:
 * For new prediction algorithms or similarity metrics, please submit a
   relevent benchmark outlining the performance of the new feature (in terms of
   accuracy, computation time, etc.). You can take a look at
-  [`examples/benchmarks`](https://github.com/NicolasHug/Surprise/blob/master/examples/benchmark.py)
+  [`examples/benchmarks`](https://github.com/dhavala/idly/blob/master/examples/benchmark.py)
   for inspiration.
 
 Set up
@@ -25,7 +25,7 @@ It's highly recommended to use a virtual environment. All the packages needed
 for the development of Surprise (sphinx, flake8, etc...) can be installed by
 running
 
-    pip install -r requirements_dev.txt
+    pip install -r requirements.txt
 
 Then, you can install your local copy of the repo:
 
