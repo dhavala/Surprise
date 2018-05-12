@@ -7,6 +7,7 @@ pytest>=3.0.3
 scipy>=1.0.0
 six>=1.10.0
 sphinx>=1.4.9
+pyenchant
 sphinx_rtd_theme
 sphinxcontrib-bibtex
 sphinxcontrib-spelling
