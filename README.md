@@ -1,16 +1,11 @@
-[![GitHub version](https://badge.fury.io/gh/nicolashug%2FSurprise.svg)](https://badge.fury.io/gh/nicolashug%2FSurprise)
-[![Documentation Status](https://readthedocs.org/projects/idly/badge/?version=latest)](http://idly.readthedocs.io/en/latest/?badge=latest)
 [![Build Status](https://travis-ci.org/dhavala/idly.svg?branch=master)](https://travis-ci.org/dhavala/idly)
+[![Documentation Status](https://readthedocs.org/projects/idly/badge/?version=latest)](http://idly.readthedocs.io/en/latest/?badge=latest)
 [![python versions](https://img.shields.io/badge/python-2.7%2C%203.5%2C%203.6-blue.svg)](http://idly.readthedocs.io)
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 
 
 idly
 ========
-
-Overview
---------
-
 [idly](http://idly.readthedocs.io) is a collection of popular machine learning algorithms implemented via DNN framework
 
 Goals:
